@@ -1,0 +1,7 @@
+.env
+.venv
+.git
+logs
+data
+__pycache__
+monitoring/admin_api_key.txt

@@ -1,0 +1,12 @@
+# Put only the admin key in admin_api_key.txt in this folder (no quotes).
+# Run Prometheus on the same host, or adjust the target for your environment.
+global:
+  scrape_interval: 15s
+scrape_configs:
+  - job_name: production-ai-service
+    metrics_path: /metrics
+    static_configs:
+      - targets: ["127.0.0.1:8000"]
+    http_headers:
+      X-API-Key:
+        files: [admin_api_key.txt]
